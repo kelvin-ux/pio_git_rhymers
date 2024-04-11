@@ -8,10 +8,10 @@ int totalRejected = 0;
         return totalRejected;
     }
 
-    public void countIn(int in) {
-    if (!callCheck() && in > peekaboo())
+    public void countIn(int inx) {
+    if (!callCheck() && inx > peekaboo())
             totalRejected++;
         else
-            super.countIn(in);
+            super.countIn(inx);
     }
 }
