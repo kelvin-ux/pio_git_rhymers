@@ -16,26 +16,30 @@ public class defaultCountingOutRhymer {
 
     public void countIn(int in) {
         if (!isFull())
-            NUMBERS[++total] = in;
+            NUMBERS[setTotal(getTotal() + 1)] = in;
     }
 
     public boolean callCheck() {
-        return total == TOTAL;
+        return getTotal() == TOTAL;
     }
     public boolean isFull() {
-        return total == 11;
+        return getTotal() == 11;
     }
 
     protected int peekaboo() {
         if (callCheck())
             return TOTAL;
-        return NUMBERS[total];
+        return NUMBERS[getTotal()];
     }
 
     public int countOut() {
         if (callCheck())
             return TOTAL;
-        return NUMBERS[total--];
+        return NUMBERS[setTotal(getTotal() - 1)];
     }
 
+    public int setTotal(int total) {
+        this.total = total;
+        return total;
+    }
 }
