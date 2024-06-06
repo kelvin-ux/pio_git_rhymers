@@ -1,6 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <projectDescription>
+<<<<<<< HEAD
 	<name>pio_git_rhymers</name>
+=======
+	<name>pio</name>
+>>>>>>> 650ee190e90379b6bf104e4e899a3d334043ffed
 	<comment></comment>
 	<projects>
 	</projects>
@@ -20,6 +24,7 @@
 		<nature>org.eclipse.jdt.core.javanature</nature>
 		<nature>org.eclipse.m2e.core.maven2Nature</nature>
 	</natures>
+<<<<<<< HEAD
 	<filteredResources>
 		<filter>
 			<id>1717676579262</id>
@@ -31,4 +36,6 @@
 			</matcher>
 		</filter>
 	</filteredResources>
+=======
+>>>>>>> 650ee190e90379b6bf104e4e899a3d334043ffed
 </projectDescription>
