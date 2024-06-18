@@ -14,6 +14,17 @@ public class defaultCountingOutRhymer {
      * The total number of elements in the rhymer.
      */
     public int total = EMPTY;
+    private static final int SIZE = 12;
+
+	private static final int TOTAL = -1;
+
+	private final int [] NUMBERS = new int[SIZE];
+
+    public int getTotal() {
+        return total;
+    }
+
+    public int total = TOTAL;
 
     /**
      * Inserts a number into the rhymer.
@@ -21,7 +32,7 @@ public class defaultCountingOutRhymer {
      */
     public void countIn(int in) {
         if (!isFull())
-            NUMBERS[++total] = in;
+            NUMBERS[setTotal(getTotal() + 1)] = in;
     }
 
     /**
@@ -38,6 +49,7 @@ public class defaultCountingOutRhymer {
      */
     public boolean callCheck() {
         return total == EMPTY;
+        return getTotal() == TOTAL;
     }
 
     /**
@@ -46,6 +58,11 @@ public class defaultCountingOutRhymer {
      */
     public boolean isFull() {
         return total == FULL_TOTAL;
+        return getTotal() == 11;
+    }
+
+    public static int getTOTAL() {
+        return TOTAL;
     }
 
     /**
@@ -54,8 +71,13 @@ public class defaultCountingOutRhymer {
      */
     protected int peekaboo() {
         if (callCheck())
+
             return RETURN;
         return NUMBERS[total];
+
+            return TOTAL;
+        return NUMBERS[getTotal()];
+
     }
 
     /**
@@ -64,6 +86,7 @@ public class defaultCountingOutRhymer {
      */
     public int countOut() {
         if (callCheck())
+
             return RETURN;
         return NUMBERS[total--];
     }
@@ -80,3 +103,13 @@ public class defaultCountingOutRhymer {
     // TODO: Consider making NUMBERS and total private and providing access via getter methods
     // TODO: Evaluate if NUMBERS array could be dynamically resized instead of being a fixed size
 }
+=======
+            return TOTAL;
+        return NUMBERS[setTotal(getTotal() - 1)];
+    }
+
+    public int setTotal(int total) {
+        this.total = total;
+        return total;
+    }
+
